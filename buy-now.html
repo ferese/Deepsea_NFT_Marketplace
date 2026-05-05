@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buy-now.css">
+    <script src="buy-now.js" defer></script>
+    <title>Buy NFT - DeepSea Marketplace</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">DeepSea Marketplace</a>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="features.html" target="_blank">Features</a>
+            <a href="blog.html" target="_blank">Blog</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="login">
+            <button class="signup">Get Started</button>
+            <a href="login.html" class="btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="buy-now-container">
+        <h1 class="buy-page-title">Buy <span>NFTs</span></h1>
+        
+        <div class="filter-section">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search NFTs...">
+                <button id="search-btn"><i class='bx bx-search'></i></button>
+            </div>
+            <div class="filter-options">
+                <select id="sort-by">
+                    <option value="default">Sort by</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="recent">Recently Added</option>
+                </select>
+                <select id="filter-category">
+                    <option value="all">All Categories</option>
+                    <option value="AsmrGraph">AsmrGraph</option>
+                    <option value="Abstract">Abstract</option>
+                    <option value="Monkey">Monkey</option>
+                    <option value="Cars">Cars</option>
+                    <option value="Trending">Trending</option>
+                </select>
+                <div class="price-range">
+                    <input type="range" id="price-filter" min="0" max="1" step="0.01" value="1">
+                    <span id="price-value">Max Price: 1+ BTC</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nft-grid" id="nft-grid">
+            <!-- NFT items will be loaded here by JavaScript -->
+        </div>
+
+        <div class="pagination">
+            <button id="prev-page" disabled><i class='bx bx-chevron-left'></i></button>
+            <span id="page-info">Page 1 of 1</span>
+            <button id="next-page"><i class='bx bx-chevron-right'></i></button>
+        </div>
+    </div>
+
+    <div class="nft-modal" id="nft-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="NFT Image">
+                    <div class="nft-details">
+                        <div class="creator-info">
+                            <img src="assets/profile-4.png" alt="Creator" class="creator-img">
+                            <div>
+                                <p>Created by</p>
+                                <h4 id="modal-creator">Artist Name</h4>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <i class='bx bx-collection'></i>
+                            <div>
+                                <p>Collection</p>
+                                <h4 id="modal-collection">Collection Name</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title">NFT Title</h2>
+                    <p id="modal-description">Description of the NFT that explains its uniqueness and value.</p>
+                    
+                    <div class="price-section">
+                        <div class="current-price">
+                            <p>Current Price</p>
+                            <h3><i class='bx bxl-bitcoin'></i> <span id="modal-price">0.00</span></h3>
+                        </div>
+                        <div class="time-left">
+                            <p>Auction ends in</p>
+                            <h3 id="modal-time">00h 00m 00s</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="purchase-options">
+                        <button id="buy-now-btn" class="purchase-btn">Buy Now</button>
+                        <button id="place-bid-btn" class="purchase-btn outline">Place a Bid</button>
+                    </div>
+                    
+                    <div class="item-history">
+                        <h4>Item History</h4>
+                        <div class="history-list">
+                            <div class="history-item">
+                                <div class="history-user">
+                                    <img src="assets/profile-4.png" alt="User">
+                                    <span>User123</span>
+                                </div>
+                                <div class="history-action">Placed a bid</div>
+                                <div class="history-price"><i class='bx bxl-bitcoin'></i> 0.20</div>
+                                <div class="history-time">2 hours ago</div>
+                            </div>
+                            <div class="history-item">
+                                <div class="history-user">
+                                    <img src="assets/profile-4.png" alt="User">
+                                    <span>NFTCollector</span>
+                                </div>
+                                <div class="history-action">Placed a bid</div>
+                                <div class="history-price"><i class='bx bxl-bitcoin'></i> 0.18</div>
+                                <div class="history-time">5 hours ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="transaction-success" class="transaction-modal">
+        <div class="transaction-content">
+            <i class='bx bx-check-circle'></i>
+            <h3>Purchase Successful!</h3>
+            <p>Your NFT has been added to your wallet.</p>
+            <button id="close-success">Continue</button>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Create, Explore & Collect Abstract NFTs</h3>
+        <div class="right">
+            <div class="links">
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <a href="cooperation.html" target="_blank">Cooperation</a>
+                <a href="sponsorship.html" target="_blank">Sponsorship</a>
+                <a href="contact.html" target="_blank">Contact Us</a>
+            </div>
+            
+            <div class="social">
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-facebook-square'></i>
+                <a href="https://github.com/fereses" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+            </div>
+            <p>Harshal Raut</p>
+        </div>
+    </footer>
+</body>
+
+</html>

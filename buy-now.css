@@ -1,0 +1,678 @@
+/* Buy Now Page Styles */
+.buy-now-container {
+    padding: 40px 80px;
+    min-height: calc(100vh - 90px);
+}
+
+.buy-page-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.buy-page-title span {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.filter-section {
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    backdrop-filter: blur(10px);
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+.search-bar button {
+    padding: 0 20px;
+    background: var(--gradient-btn);
+    border: none;
+    border-radius: 0 30px 30px 0;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: var(--gradient-hover);
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-options select {
+    padding: 12px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+.filter-options select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+.price-range {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.price-range input {
+    flex: 1;
+    appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #0c4c91, #05d5ff);
+    outline: none;
+}
+
+.price-range input::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.price-range span {
+    min-width: 120px;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.nft-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nft-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 132, 255, 0.25);
+}
+
+.nft-image {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+}
+
+.nft-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.nft-card:hover .nft-image img {
+    transform: scale(1.05);
+}
+
+.nft-badges {
+    position: absolute;
+    top: 15px;
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+    justify-content: space-between;
+}
+
+.nft-badges .category {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.nft-badges .status {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.nft-info {
+    padding: 20px;
+}
+
+.nft-name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nft-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nft-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ff9d00;
+    font-weight: 600;
+}
+
+.nft-price i {
+    font-size: 18px;
+}
+
+.nft-creator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.nft-creator img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.nft-creator span {
+    font-size: 14px;
+    color: #666;
+}
+
+.nft-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nft-actions .time-left {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff3838;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.nft-actions .bid-btn {
+    color: #fff;
+    background: var(--gradient-btn);
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 115, 255, 0.2);
+}
+
+.nft-actions .bid-btn:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 115, 255, 0.3);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.pagination button {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+    background: var(--gradient-btn);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 115, 255, 0.2);
+}
+
+.pagination span {
+    font-weight: 500;
+}
+
+/* NFT Modal Styles */
+.nft-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalFade 0.3s ease;
+    overflow: hidden;
+}
+
+@keyframes modalFade {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    display: flex;
+    padding: 30px;
+}
+
+.modal-left {
+    width: 45%;
+    padding-right: 30px;
+}
+
+.modal-left img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nft-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.creator-info, .collection-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.creator-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.collection-info i {
+    font-size: 30px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 255, 0.1);
+}
+
+.nft-details p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.nft-details h4 {
+    font-weight: 600;
+}
+
+.modal-right {
+    width: 55%;
+    padding-left: 30px;
+}
+
+.modal-right h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.modal-right p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.price-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.current-price, .time-left {
+    background: rgba(0, 128, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    flex: 1;
+}
+
+.current-price p, .time-left p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.current-price h3, .time-left h3 {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    color: var(--primary-dark);
+}
+
+.current-price h3 i {
+    color: #ff9d00;
+    margin-right: 8px;
+    font-size: 24px;
+}
+
+.purchase-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.purchase-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#buy-now-btn {
+    background: var(--gradient-btn);
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 115, 255, 0.25);
+}
+
+#buy-now-btn:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 115, 255, 0.35);
+}
+
+#place-bid-btn {
+    background: white;
+    color: var(--primary-dark);
+    border: 2px solid rgba(0, 128, 255, 0.3);
+}
+
+#place-bid-btn:hover {
+    background: rgba(0, 128, 255, 0.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.item-history h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.history-list {
+    background: rgba(0, 128, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-user img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.history-action {
+    color: #666;
+}
+
+.history-price {
+    color: #ff9d00;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.history-price i {
+    margin-right: 5px;
+}
+
+.history-time {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Transaction Success Modal */
+.transaction-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.transaction-content {
+    position: relative;
+    background: white;
+    margin: 15% auto;
+    padding: 30px;
+    width: 400px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalFade 0.3s ease;
+}
+
+.transaction-content i {
+    font-size: 60px;
+    color: #00cc66;
+    margin-bottom: 20px;
+}
+
+.transaction-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.transaction-content p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.transaction-content button {
+    background: var(--gradient-btn);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 115, 255, 0.25);
+}
+
+.transaction-content button:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 115, 255, 0.35);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .buy-now-container {
+        padding: 30px 60px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .buy-now-container {
+        padding: 30px 40px;
+    }
+    
+    .modal-body {
+        flex-direction: column;
+    }
+    
+    .modal-left, .modal-right {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .modal-left {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .buy-now-container {
+        padding: 20px;
+    }
+    
+    .buy-page-title {
+        font-size: 36px;
+    }
+    
+    .nft-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .filter-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .price-range {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .price-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .purchase-options {
+        flex-direction: column;
+    }
+}
